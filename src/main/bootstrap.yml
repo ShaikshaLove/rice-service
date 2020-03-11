@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: riceservice
+
+  cloud:
+    config:
+      uri:  https://s3rice-config-server.herokuapp.com
+
+  profiles:
+    active: dev
