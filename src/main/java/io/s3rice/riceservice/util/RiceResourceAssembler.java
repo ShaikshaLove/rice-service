@@ -1,17 +1,12 @@
 package io.s3rice.riceservice.util;
 import io.s3rice.riceservice.model.RiceType;
 import io.s3rice.riceservice.rest.api.RiceResource;
-import org.springframework.hateoas.CollectionModel;
-import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
-
 @Component
-public class RiceResourceAssembler implements RepresentationModelAssembler<RiceType, RiceType> {
+public class RiceResourceAssembler /*implements RepresentationModelAssembler<RiceType, RiceType>*/ {
 
-    @Override
+   /* @Override
     public RiceType toModel(RiceType riceType) {
         riceType.add(linkTo(methodOn(RiceResource.class).one(riceType.getRiceTypeId())).withSelfRel());
         riceType.add(linkTo(methodOn(RiceResource.class).all()).withRel("riceTypeList"));
@@ -22,7 +17,7 @@ public class RiceResourceAssembler implements RepresentationModelAssembler<RiceT
     public CollectionModel<RiceType> toCollectionModel(Iterable<? extends RiceType> entities) {
 
         return null;
-    }
+    }*/
 
 
 

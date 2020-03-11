@@ -1,13 +1,12 @@
 package io.s3rice.riceservice.model;
 
-import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 @Entity
 @Table(name="RICE_TAB")
-public class RiceType extends RepresentationModel<RiceType> {
+public class RiceType {
 
     @Id
     @GeneratedValue

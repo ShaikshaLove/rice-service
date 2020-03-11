@@ -57,12 +57,12 @@ public class RiceResource {
     @GetMapping(produces = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<RiceType>> all(){
 
-       List<RiceType> riceTypes= riceService.getAllRiceTypes()
-                .stream()
+       List<RiceType> riceTypes= riceService.getAllRiceTypes();
+              /*  .stream()
                 .map(riceType ->{
                    return riceResourceAssembler.toModel(riceType);
                 } )
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
         return  new ResponseEntity<>(riceTypes,HttpStatus.OK);
     }
 
@@ -74,7 +74,7 @@ public class RiceResource {
 
     @GetMapping(value="/{riceTypeId}",produces = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<RiceType> one(@PathVariable("riceTypeId")int riceTypeId) {
-        return new ResponseEntity<>(riceResourceAssembler.toModel(riceService.findOne(riceTypeId)),HttpStatus.OK);
+        return new ResponseEntity<>(/*riceResourceAssembler.toModel()*/riceService.findOne(riceTypeId),HttpStatus.OK);
     }
 
     /***
