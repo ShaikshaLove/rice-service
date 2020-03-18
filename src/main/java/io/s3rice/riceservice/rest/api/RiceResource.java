@@ -42,8 +42,8 @@ public class RiceResource {
      * Creating a new ricetype resource
      *
      * */
-    @PostMapping(consumes={MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE},
-                 produces = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
+    @PostMapping(consumes={MediaType.APPLICATION_JSON_VALUE},
+                 produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<SuccessResponse> save(@RequestBody RiceTypeDto riceTypeDto){
         RiceType riceType= riceService.saveRiceType(riceTypeDto);
         Message message=new Message("The rice type information has been saved with id , "+riceType.getRiceTypeId(),HttpStatus.CREATED.value());
@@ -81,8 +81,8 @@ public class RiceResource {
      * Updating a existing ricetype resource
      *
      * */
-    @PutMapping(consumes={MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE},
-                produces = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
+    @PutMapping(consumes={MediaType.APPLICATION_JSON_VALUE},
+                produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<SuccessResponse> update(@RequestBody RiceType riceType){
         riceService.updateRiceType(riceType);
         return ResponseEntity.ok(new SuccessResponse(new Message("The details have been updated, ",HttpStatus.OK.value())));
